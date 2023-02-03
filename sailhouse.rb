@@ -5,20 +5,20 @@
 class Sailhouse < Formula
   desc ""
   homepage "https://sailhouse.dev"
-  version "0.0.4"
+  version "0.0.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/sailhouse/sailhouse/releases/download/v0.0.4/sailhouse_Darwin_x86_64.tar.gz"
-      sha256 "bb0bf8f0b879f71a9e28e7ed370a76fd7c93e8d11c822efdb3c757efeb9a7467"
+      url "https://github.com/sailhouse/cli/releases/download/v0.0.1/sailhouse_Darwin_x86_64.tar.gz"
+      sha256 "5c6c0da17951cca404aa23db317f98adf4b0a241b82d4539a6d9853d70827833"
 
       def install
         bin.install "sailhouse"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/sailhouse/sailhouse/releases/download/v0.0.4/sailhouse_Darwin_arm64.tar.gz"
-      sha256 "166791bce30e9e3c0b807a77b658bb4567e6ce9d8e689086038bf907b7c962d8"
+      url "https://github.com/sailhouse/cli/releases/download/v0.0.1/sailhouse_Darwin_arm64.tar.gz"
+      sha256 "f1ff1b291a6a4dfb9d82b6f4a8ec40f1c2585683383e6523bbb23526a5e97b97"
 
       def install
         bin.install "sailhouse"
@@ -28,16 +28,16 @@ class Sailhouse < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sailhouse/sailhouse/releases/download/v0.0.4/sailhouse_Linux_arm64.tar.gz"
-      sha256 "88666547bed44496793feb67c2e08b0de8bbf555f6a0f1ebaddeae6cb9c8f285"
+      url "https://github.com/sailhouse/cli/releases/download/v0.0.1/sailhouse_Linux_arm64.tar.gz"
+      sha256 "cbda962af86beb96e6168d49af95777e9a9cd25b38ed32b794fcd88ef54855fe"
 
       def install
         bin.install "sailhouse"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/sailhouse/sailhouse/releases/download/v0.0.4/sailhouse_Linux_x86_64.tar.gz"
-      sha256 "e7379c5c987edc278ff274fd4a97ade74aed177fb0aa8d7276d12af518b1c598"
+      url "https://github.com/sailhouse/cli/releases/download/v0.0.1/sailhouse_Linux_x86_64.tar.gz"
+      sha256 "386366f1f4ef57263a78d905f37af26d2bbb91ea5685ac2da5ed3e8fdf5a50e3"
 
       def install
         bin.install "sailhouse"
