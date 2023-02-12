@@ -5,20 +5,20 @@
 class Sailhouse < Formula
   desc ""
   homepage "https://sailhouse.dev"
-  version "0.2.1"
+  version "0.2.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.1/sailhouse_Darwin_arm64.tar.gz"
-      sha256 "1072808f2816911a2a972dc7417af660319f1eb1b3a31ae824bb7c7040ff3897"
+    if Hardware::CPU.intel?
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.2/sailhouse_Darwin_x86_64.tar.gz"
+      sha256 "e078d8a0688624feea0f3cbf965e98e1c06c4812b840e247ddd0984d465d7517"
 
       def install
         bin.install "sailhouse"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.1/sailhouse_Darwin_x86_64.tar.gz"
-      sha256 "505d6dc7e9c33ad4f0e841a581c3560ad5aa2bdbde899874562209a3542a3a60"
+    if Hardware::CPU.arm?
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.2/sailhouse_Darwin_arm64.tar.gz"
+      sha256 "1f774474dadedca4e2db58ad4e6d379947c31da53754bbe9f9c5cfaef30fff73"
 
       def install
         bin.install "sailhouse"
@@ -28,16 +28,16 @@ class Sailhouse < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.1/sailhouse_Linux_arm64.tar.gz"
-      sha256 "bab96c3f375e70e1e54f3c3da568e531515e951bc1a5778eec51e379ebe753c0"
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.2/sailhouse_Linux_arm64.tar.gz"
+      sha256 "a4aa456a9292ee1e102ea815a7c56bc58a296308fe467a7e23ae366f9390fc8b"
 
       def install
         bin.install "sailhouse"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.1/sailhouse_Linux_x86_64.tar.gz"
-      sha256 "3c7154b4bf4de321e7a41d63160c3fa2ed8f19a3d3e84d78dfb6d44f9adaafe2"
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.2/sailhouse_Linux_x86_64.tar.gz"
+      sha256 "14376bc70c07ae2c4db71c7a6b3bc1fd9985e951ef8526d25c17c7a2190cd9a4"
 
       def install
         bin.install "sailhouse"
