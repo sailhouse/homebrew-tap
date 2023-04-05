@@ -5,20 +5,20 @@
 class Sailhouse < Formula
   desc ""
   homepage "https://sailhouse.dev"
-  version "0.2.3"
+  version "0.2.4"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.3/sailhouse_Darwin_arm64.tar.gz"
-      sha256 "1fe08c7558b983f124cc703df83e1adb64cef596c26361b82ca6be5cf146bb09"
+    if Hardware::CPU.intel?
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.4/sailhouse_Darwin_x86_64.tar.gz"
+      sha256 "294d8b266c52ebbc2fa7439b3e7e98cff46b14daa4f8cd2405d6c915e53c9153"
 
       def install
         bin.install "sailhouse"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.3/sailhouse_Darwin_x86_64.tar.gz"
-      sha256 "fbebdf32c0a11eab3c3a416d25980dc1c3844abb10ec756957104ce378745508"
+    if Hardware::CPU.arm?
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.4/sailhouse_Darwin_arm64.tar.gz"
+      sha256 "515d912c8d224af435702f0435953a5dcb7a12fe1a30ad82d7e10f1220f915d3"
 
       def install
         bin.install "sailhouse"
@@ -27,17 +27,17 @@ class Sailhouse < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.3/sailhouse_Linux_arm64.tar.gz"
-      sha256 "9e694e56ee7afc01e7003e848bdad43aa3c624736a1cf7d26644c631fabdeefa"
+    if Hardware::CPU.intel?
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.4/sailhouse_Linux_x86_64.tar.gz"
+      sha256 "b36f293e925da35b0e96b97fe185d3820f2cd20eda505beb96e28a6027f1a262"
 
       def install
         bin.install "sailhouse"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.3/sailhouse_Linux_x86_64.tar.gz"
-      sha256 "6d2a7fd6bf72a3a8f68d428f9c41d6fc7136cf15e342990a1e9d1a6987163aed"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.4/sailhouse_Linux_arm64.tar.gz"
+      sha256 "29582fd56ca98b40bb63919b6d976957a79d94b6515e927e8394aeb6d4da925b"
 
       def install
         bin.install "sailhouse"
