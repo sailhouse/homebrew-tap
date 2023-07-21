@@ -5,20 +5,20 @@
 class Sailhouse < Formula
   desc ""
   homepage "https://sailhouse.dev"
-  version "0.2.5"
+  version "0.2.7"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.5/sailhouse_Darwin_arm64.tar.gz"
-      sha256 "46366700430e599913b498ad4dbcd8c136d9dbbc2cd9b1eb20ea3c9e62701427"
+    if Hardware::CPU.intel?
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.7/sailhouse_Darwin_x86_64.tar.gz"
+      sha256 "22e78d2fb9786c8e0926036df3283ff698c5a1e6b5c7b0d94c497a7d0b62c2e1"
 
       def install
         bin.install "sailhouse"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.5/sailhouse_Darwin_x86_64.tar.gz"
-      sha256 "dac258f04ba96f559dcd703b8cc69e9d8c774ac3a3d7190c5b8722e9c3fd6c0c"
+    if Hardware::CPU.arm?
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.7/sailhouse_Darwin_arm64.tar.gz"
+      sha256 "84417cfedac49600b34ef8f3d9fb98138dcddb023bb342ff5e397a9b3d4bb11f"
 
       def install
         bin.install "sailhouse"
@@ -27,17 +27,17 @@ class Sailhouse < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.5/sailhouse_Linux_x86_64.tar.gz"
-      sha256 "fa1b9990e7051691b27b6a20abb747d660b69a244fb2eb48ada5ac64dc0be27e"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.7/sailhouse_Linux_arm64.tar.gz"
+      sha256 "cf6237d3e14cf64638c782a3407c4ab1a020fc44adfae5b1155dd16365bc332a"
 
       def install
         bin.install "sailhouse"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.5/sailhouse_Linux_arm64.tar.gz"
-      sha256 "d5a6f642266d2e9d8b7374f1c019a1fd10ed583211622f5bdcb30481a72dbfc5"
+    if Hardware::CPU.intel?
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.7/sailhouse_Linux_x86_64.tar.gz"
+      sha256 "e7646fba9b070db35044af2a0fbc66c508e73617076d866ff23ae13eb6792686"
 
       def install
         bin.install "sailhouse"
