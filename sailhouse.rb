@@ -5,20 +5,20 @@
 class Sailhouse < Formula
   desc ""
   homepage "https://sailhouse.dev"
-  version "0.2.8"
+  version "0.2.9"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.8/sailhouse_Darwin_arm64.tar.gz"
-      sha256 "4a41c67e5d05332dd0750ae6e03e61e6052abf447beb28a2e3d675545171539a"
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.9/sailhouse_Darwin_arm64.tar.gz"
+      sha256 "de2150bfac9f3a62677c86092edf6d6c147202fd490abd3fae1addc5710fb6dc"
 
       def install
         bin.install "sailhouse"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.8/sailhouse_Darwin_x86_64.tar.gz"
-      sha256 "da1e035ed6bd7e15e28bc17b80eed14b35f73d7f701cb2d8df81a99eda39a4c4"
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.9/sailhouse_Darwin_x86_64.tar.gz"
+      sha256 "d363d0aee978d66f69abb9037451daeb2db20bf16c85a440651c99be7be3453c"
 
       def install
         bin.install "sailhouse"
@@ -28,16 +28,16 @@ class Sailhouse < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.8/sailhouse_Linux_arm64.tar.gz"
-      sha256 "d2288eadac44f0ef63e65fe8c5319157524afc240020b8bd1dfe731b81162e21"
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.9/sailhouse_Linux_arm64.tar.gz"
+      sha256 "c7b4f2bcb02ff6726baa024d46d2cefc55e48544246af77863b9fcc29e5190cf"
 
       def install
         bin.install "sailhouse"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/sailhouse/cli/releases/download/v0.2.8/sailhouse_Linux_x86_64.tar.gz"
-      sha256 "7ee7ec1841a6536f3071a793955aa4e316c45bbdb2e0d1fb91c77f7de50db4e3"
+      url "https://github.com/sailhouse/cli/releases/download/v0.2.9/sailhouse_Linux_x86_64.tar.gz"
+      sha256 "a29bdd55ecfe3f08363c1ce21b62464ca405e66077ee7a92ee0e2e6f2704e784"
 
       def install
         bin.install "sailhouse"
