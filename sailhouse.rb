@@ -5,20 +5,20 @@
 class Sailhouse < Formula
   desc ""
   homepage "https://sailhouse.dev"
-  version "0.3.0"
+  version "0.4.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/sailhouse/cli/releases/download/v0.3.0/sailhouse_Darwin_x86_64.tar.gz"
-      sha256 "897176b6017eac08958c035c568894b6c7ebade7128fedcb5e2e6bb78e218243"
+    on_intel do
+      url "https://github.com/sailhouse/cli/releases/download/v0.4.0/sailhouse_Darwin_x86_64.tar.gz"
+      sha256 "28ed2b4af3e878c8433a4c3118d5c0ac831996025facea33e8e3f2693ddb8521"
 
       def install
         bin.install "sailhouse"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/sailhouse/cli/releases/download/v0.3.0/sailhouse_Darwin_arm64.tar.gz"
-      sha256 "37b3d4568ac47e337715a0c07bc108935ee7367084109c82c739aeec6a8331e8"
+    on_arm do
+      url "https://github.com/sailhouse/cli/releases/download/v0.4.0/sailhouse_Darwin_arm64.tar.gz"
+      sha256 "321060bf456982215f4794ff432257a223129d1ab2fdc4abc9e69605d7538fa1"
 
       def install
         bin.install "sailhouse"
@@ -27,20 +27,24 @@ class Sailhouse < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sailhouse/cli/releases/download/v0.3.0/sailhouse_Linux_arm64.tar.gz"
-      sha256 "33c168889a59fb2fbeddd0f7da0398ea6f2b18202ed58a58631f8dad5ae8b603"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/sailhouse/cli/releases/download/v0.4.0/sailhouse_Linux_x86_64.tar.gz"
+        sha256 "50cb69c5026663585b0c92fe573d42f9e47a76010bd67b9e859f73eceaaecd4d"
 
-      def install
-        bin.install "sailhouse"
+        def install
+          bin.install "sailhouse"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/sailhouse/cli/releases/download/v0.3.0/sailhouse_Linux_x86_64.tar.gz"
-      sha256 "390b05dfa371ea64e7ca434343f21a5d7ef320ef35452e2267ddfcc4a28ffb5f"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/sailhouse/cli/releases/download/v0.4.0/sailhouse_Linux_arm64.tar.gz"
+        sha256 "5a8dbcce8f22c07b787725b99f73654c6666b50b7d8447e725d02f5037d1a3c4"
 
-      def install
-        bin.install "sailhouse"
+        def install
+          bin.install "sailhouse"
+        end
       end
     end
   end
